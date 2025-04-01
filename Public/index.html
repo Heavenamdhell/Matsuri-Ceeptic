@@ -898,7 +898,6 @@
                     <p>Dúvidas? Entre em contato conosco pelas redes sociais ou pelo email matsuriceeptic@gmail.com</p>
                 </div>
                 <div class="form-container">
-                    <form id="reservaForm" action="https://script.google.com/macros/s/AKfycbxRllLUvbHCZJs6cVfqaTqpMIK9ARjemdeE1aBkLEfqaXdImq_d2zYoSVOHfA-BwHnC/exec" method="post">
                         <div class="input-box">
                             <label for="nome">Nome Completo:</label>
                             <input type="text" id="nome" name="nome" placeholder="Nome e sobrenome" required>
@@ -1121,23 +1120,56 @@
                         .on('change', '#numero-convidados', gerarCamposConvidados);
 
                     // Envio do formulário
-                    $('#reservaForm').on('submit', function(e) {
-                        e.preventDefault();
-                        const atividades = Array.from(document.getElementById("atividade").selectedOptions).map(option => option.value);
-                        const personagem = document.getElementById("personagem").value;
-                        const animeSerie = document.getElementById("anime-serie").value;
+                    $('#reservaForm').on('submit', async function(e) {
+    e.preventDefault();
+    const atividades = Array.from(document.getElementById("atividade").selectedOptions).map(option => option.value);
+    const personagem = document.getElementById("personagem").value;
+    const animeSerie = document.getElementById("anime-serie").value;
 
-                        if (atividades && (atividades.includes("Competição de Cosplay") || atividades.includes("Competição de Cospobre"))) {
-                            if (!personagem || !animeSerie) {
-                                alert("Por favor, preencha as informações sobre seu cosplay/cospobre.");
-                                return;
-                            }
-                        }
+    if (atividades && (atividades.includes("Competição de Cosplay") || atividades.includes("Competição de Cospobre"))) {
+        if (!personagem || !animeSerie) {
+            alert("Por favor, preencha as informações sobre seu cosplay/cospobre.");
+            return;
+        }
+    }
 
-                        
-                        // Aqui você pode adicionar o código para enviar o formulário realmente
-                        // this.submit();
-                    });
+    // Preparar dados para Supabase
+    const formData = {
+        nome: $('#nome').val(),
+        turma: $('#turma').val(),
+        atividades: atividades,
+        outros: $('#outros').val() || null,
+        personagem: personagem || null,
+        anime_serie: animeSerie || null,
+        convidados: $('input[name="convidados"]:checked').val() === 'Sim',
+        numero_convidados: $('input[name="convidados"]:checked').val() === 'Sim' 
+            ? parseInt($('#numero-convidados').val()) 
+            : null,
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        const btn = $(this).find('button[type="submit"]');
+        btn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Enviando...');
+
+        const response = await fetch('/api/reserva', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) throw new Error(await response.text());
+        
+        mostrarConfirmacao();
+        this.reset();
+        $('#atividade').val(null).trigger('change');
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao enviar: " + error.message);
+    } finally {
+        $('button[type="submit"]').prop('disabled', false).text('Confirmar Inscrição');
+    }
+});
                 });
             };
             document.body.appendChild(select2Script);
