@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
   // 2.3 Processamento dos dados
   try {
     const { data, error } = await supabase
-      .from('reservas_matsuri')
+      .from('Reservas_Matsuri')
       .insert([{
         nome: req.body.nome,
         turma: req.body.turma,
