@@ -898,7 +898,7 @@
                     <p>Dúvidas? Entre em contato conosco pelas redes sociais ou pelo email matsuriceeptic@gmail.com</p>
                 </div>
                 <div class="form-container">
-                    <form id="reservaForm" action="https://script.google.com/macros/s/AKfycbxRllLUvbHCZJs6cVfqaTqpMIK9ARjemdeE1aBkLEfqaXdImq_d2zYoSVOHfA-BwHnC/exec" method="post">
+                    <form id="reservaForm" action="https://script.google.com/macros/s/AKfycbwdw5RnurLp97Gseiekldps1N_KCBozF2ptF4GDw3KSctfTG4avQPmHvi9G8-3dn9m3sQ/exec" method="post">
                         <div class="input-box">
                             <label for="nome">Nome Completo:</label>
                             <input type="text" id="nome" name="nome" placeholder="Nome e sobrenome" required>
@@ -1120,84 +1120,27 @@
                         })
                         .on('change', '#numero-convidados', gerarCamposConvidados);
 
-                        $('#reservaForm').on('submit', async function(e) {
-    e.preventDefault();
-    
-    // 1. Coleta de dados
-    const atividades = Array.from(document.getElementById("atividade").selectedOptions)
-                          .map(option => option.value);
-    const personagem = document.getElementById("personagem").value;
-    const animeSerie = document.getElementById("anime-serie").value;
+                    // Envio do formulário
+                    $('#reservaForm').on('submit', function(e) {
+                        e.preventDefault();
+                        const atividades = Array.from(document.getElementById("atividade").selectedOptions).map(option => option.value);
+                        const personagem = document.getElementById("personagem").value;
+                        const animeSerie = document.getElementById("anime-serie").value;
 
-    // 2. Validação específica para cosplay
-    if (atividades.some(a => a.includes("Competição de Cosplay") || a.includes("Competição de Cospobre"))) {
-        if (!personagem || !animeSerie) {
-            alert("Por favor, preencha as informações sobre seu cosplay/cospobre.");
-            return;
-        }
-    }
+                        if (atividades && (atividades.includes("Competição de Cosplay") || atividades.includes("Competição de Cospobre"))) {
+                            if (!personagem || !animeSerie) {
+                                alert("Por favor, preencha as informações sobre seu cosplay/cospobre.");
+                                return;
+                            }
+                        }
 
-    // 3. Preparação dos dados
-    const reservaData = {
-        nome: $('#nome').val(),
-        turma: $('#turma').val(),
-        atividades: atividades,
-        outros: $('#outros').val() || null,
-        personagem: personagem || null,
-        anime_serie: animeSerie || null,
-        convidados: $('input[name="convidados"]:checked').val() === 'Sim',
-        numero_convidados: $('input[name="convidados"]:checked').val() === 'Sim' 
-            ? parseInt($('#numero-convidados').val()) 
-            : null,
-        criado_em: new Date().toISOString()
-    };
-
-    // 4. Envio para a API
-    try {
-        const btn = $(this).find('button[type="submit"]');
-        btn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Enviando...');
-
-        // Debug: Mostra os dados no console antes do envio
-        console.log('Dados sendo enviados:', reservaData);
-
-        const response = await fetch('/api/reserva', {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(reservaData)
-        });
-
-        // 5. Tratamento da resposta
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || 'Erro desconhecido');
-        }
-
-        const result = await response.json();
-        console.log('Resposta da API:', result);
-        
-        // 6. Feedback visual
-        mostrarConfirmacao();
-        this.reset();
-        $('#atividade').val(null).trigger('change');
-
-    } catch (error) {
-        console.error("Erro detalhado:", error);
-        alert(`Erro ao enviar: ${error.message}\n\nVerifique o console para detalhes.`);
-    } finally {
-        $('button[type="submit"]')
-            .prop('disabled', false)
-            .text('Confirmar Inscrição');
-    }
+                        
+                        // Aqui você pode adicionar o código para enviar o formulário realmente
+                        // this.submit();
                     });
                 });
             };
-            function mostrarConfirmacao() {
-                alert("Reserva confirmada com sucesso! 🎉");
-            }
-        
+            document.body.appendChild(select2Script);
         }
 
         // Funções auxiliares
