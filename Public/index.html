@@ -327,7 +327,6 @@
             padding: 2rem;
             margin-bottom: 2rem;
         }
-
         .section { 
             display: flex;
             flex-direction: column;
@@ -341,6 +340,18 @@
             transition: all 0.3s ease;
         }
 
+        .section { 
+            display: flex;
+            flex-direction: column;
+            margin: 2rem 0; 
+            padding: 1.5rem; 
+            background: white;
+            border-radius: 10px; 
+            box-shadow: 0 3px 8px var(--sombra);
+            border-left: 4px solid var(--vermelho-japones);
+            position: relative;
+            transition: all 0.3s ease;
+        }
         .section:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(139,0,0,0.15);
@@ -898,79 +909,22 @@
                     <p>Dúvidas? Entre em contato conosco pelas redes sociais ou pelo email matsuriceeptic@gmail.com</p>
                 </div>
                 <div class="form-container">
-                    <form id="reservaForm" action="https://script.google.com/macros/s/AKfycbwdw5RnurLp97Gseiekldps1N_KCBozF2ptF4GDw3KSctfTG4avQPmHvi9G8-3dn9m3sQ/exec" method="post">
-                        <div class="input-box">
-                            <label for="nome">Nome Completo:</label>
-                            <input type="text" id="nome" name="nome" placeholder="Nome e sobrenome" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="turma">Turma:</label>
-                            <input type="text" id="turma" name="turma" placeholder="Ex: 2º INFO A" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="atividade">Quais atividades deseja participar? (Selecione até 3)</label>
-                            <select id="atividade" name="atividade[]" multiple="multiple">
-                                <option value="Competição de Cosplay">Competição de Cosplay</option>
-                                <option value="Competição de Cospobre">Competição de Cospobre</option>
-                                <option value="Torneio de Yu-Gi-Oh!">Torneio de Yu-Gi-Oh!</option>
-                                <option value="Torneio de Magic">Torneio de Magic</option>
-                                <option value="Torneio de Pokémon">Torneio de Pokémon</option>
-                                <option value="Campeonato de Street Fighter">Campeonato de Street Fighter</option>
-                                <option value="Oficina de Origami">Oficina de Origami</option>
-                                <option value="Workshop de Caligrafia Japonesa">Workshop de Caligrafia Japonesa</option>
-                                <option value="Feira de Troca de Mangás">Feira de Troca de Mangás</option>
-                                <option value="Outros">Outros (especifique abaixo)</option>
-                            </select>
-                        </div>
-                        <div id="outros-info">
-                            <div class="input-box">
-                                <label for="outros">Se escolheu "Outros", especifique:</label>
-                                <textarea id="outros" name="outros" rows="3" placeholder="Quais outras atividades gostaria que tivéssemos no evento?"></textarea>
-                            </div>
-                        </div>
-                        <div id="cosplay-info">
-                            <div class="input-box">
-                                <label for="personagem">Qual personagem você vai caracterizar?</label>
-                                <input type="text" id="personagem" name="personagem" placeholder="Nome do personagem">
-                            </div>
-                            <div class="input-box">
-                                <label for="anime-serie">De qual anime/série/jogo é esse personagem?</label>
-                                <input type="text" id="anime-serie" name="anime-serie" placeholder="Nome da obra original">
-                            </div>
-                            <div class="aviso">
-                                Lembre-se: Cosplays devem ser adequados para o ambiente escolar. Trajes muito reveladores ou que cubram totalmente o rosto não serão permitidos.
-                            </div>
-                        </div>
-                        <div class="input-box">
-                            <label>Você pretende trazer convidados?</label>
-                            <div class="radio-group">
-                                <label>
-                                    <input type="radio" id="sim" name="convidados" value="Sim">
-                                    Sim
-                                </label>
-                                <label>
-                                    <input type="radio" id="nao" name="convidados" value="Não">
-                                    Não
-                                </label>
-                            </div>
-                        </div>
-                        <div id="convidados-info">
-                            <div class="input-box">
-                                <label for="numero-convidados">Quantos convidados? (Máximo 2)</label>
-                                <select id="numero-convidados" name="numero-convidados">
-                                    <option value="1">1 convidado</option>
-                                    <option value="2">2 convidados</option>
-                                </select>
-                            </div>
-                            <div id="campos-convidados"></div>
-                            <div class="aviso">
-                                Cada convidado deverá pagar R$ 10,00 no dia do evento. O pagamento será feito na entrada.
-                            </div>
-                        </div>
-                        <div class="aviso-geral">
-                            <strong>Importante:</strong> As atividades serão confirmadas de acordo com o número de interessados. Algumas podem ser canceladas ou ter horários alterados. Acompanhe nossas redes sociais para atualizações!
-                        </div>
-                        <button class="button" type="submit">Confirmar Inscrição</button>
+                    <form id="reservaForm">
+                        <iframe data-tally-src="https://tally.so/embed/nrYprL?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                                loading="lazy" width="100%" height="577" frameborder="0" marginheight="0" marginwidth="0" 
+                                title="Reservas"></iframe>
+                        <script>
+                            var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+                                "undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){
+                                    e.src=e.dataset.tallySrc
+                                }))
+                            };
+                            if("undefined"!=typeof Tally)v();
+                            else if(d.querySelector('script[src="'+w+'"]')==null){
+                                var s=d.createElement("script");
+                                s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);
+                            }
+                        </script>
                     </form>
                 </div>
             </section>
@@ -993,7 +947,7 @@
                 <div class="image">
                     <img src="f4.jpg" alt="Redes Sociais" loading="lazy">
                 </div>
-            </section>
+
         </div>
     </div>
 
