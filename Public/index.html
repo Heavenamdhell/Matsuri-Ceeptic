@@ -775,7 +775,8 @@
 
     #parceiros div[style*="min-width: 300px"] {
         width: 100%;
-        padding: 0 !important;
+        padding: 0 1rem !important; /* Adiciona um espaço lateral pra não colar na borda */
+        box-sizing: border-box; /* Garante que o padding conte dentro da largura */
     }
 
     #parceiros div[style*="min-width: 300px"] p {
@@ -793,6 +794,7 @@
         padding: 10px 15px !important;
     }
 }
+
 
 
     
