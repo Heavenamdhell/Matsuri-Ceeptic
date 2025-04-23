@@ -767,12 +767,11 @@
         align-items: center;
     }
     
-   .partner-card {
-        width: 85% !important; 
+    .partner-card {
+        width: 100% !important;
         max-width: 280px;
-        margin-left: -15px;      
-        position: relative;
-        left: -5px;
+        height: auto !important;
+        margin: 0 auto;
     }
     
     #parceiros h2 {
@@ -826,18 +825,22 @@
     flex: 1;
     padding: 0 1rem 0 0; 
     margin-left: -15px; 
-    text-align: center;
+    text-align: left;
     position: relative;
     left: -8px; 
 }
 
 .partner-button {
-        width: 90%;
-        margin: 1rem auto 0;     /* Centraliza o botão */
-        display: block;
-        position: relative;
-        left: -5px;
-    }
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1rem;
+    width: auto;
 }
 
 @media (max-width: 768px) {
@@ -856,8 +859,8 @@
         width: 100%;
         padding: 0;
        text-align: center; 
-        margin-left: -5px;     
-        left: 0px; 
+        margin-left: -10px;     
+        left: -5px; 
     }
     
     .partner-button {
