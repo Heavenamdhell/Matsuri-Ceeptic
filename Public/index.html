@@ -764,38 +764,37 @@
 
     #parceiros .section-container {
         padding: 1.5rem;
-        text-align: center;
     }
 
     #parceiros h2 {
         text-align: center !important;
         font-size: 1.6rem !important;
-        margin: 0 auto 1rem auto !important;
+        margin-bottom: 1rem !important;
         width: 100%;
     }
 
     #parceiros div[style*="min-width: 300px"] {
         width: 100%;
-        padding: 0 1rem !important;
-        box-sizing: border-box;
+        padding: 0 1rem !important; /* Adiciona um espaço lateral pra não colar na borda */
+        box-sizing: border-box; /* Garante que o padding conte dentro da largura */
     }
 
     #parceiros div[style*="min-width: 300px"] p {
         text-align: center !important;
+        text-align-last: center !important;
         margin-left: auto;
         margin-right: auto;
         max-width: 95%;
     }
 
     #parceiros a {
-        display: block;
         width: 90%;
         max-width: 300px;
-        margin: 2rem auto 0 auto;
+        margin: 0 auto;
         padding: 10px 15px !important;
-        text-align: center;
     }
 }
+
 
 
 
