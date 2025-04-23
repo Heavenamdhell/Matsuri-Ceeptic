@@ -823,9 +823,11 @@
 
 .partner-text {
     flex: 1;
-    padding: 0 1rem;
-    text-align: left; /* Alinhamento à esquerda */
-    margin-left: 0; /* Remove margem esquerda */
+    padding: 0 1rem 0 0; 
+    margin-left: -15px; 
+    text-align: left;
+    position: relative;
+    left: -8px; /* Deslocamento adicional */
 }
 
 .partner-button {
@@ -856,7 +858,9 @@
     .partner-text {
         width: 100%;
         padding: 0;
-        text-align: center; /* Centraliza no mobile */
+       text-align: center; 
+        margin-left: 0;     
+        left: 0; 
     }
     
     .partner-button {
