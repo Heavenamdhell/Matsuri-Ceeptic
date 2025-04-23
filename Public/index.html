@@ -792,7 +792,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    align-items: flex-start;
     padding: 1rem;
 }
 
@@ -824,8 +823,22 @@
 
 .partner-text {
     flex: 1;
-    min-width: 0;
     padding: 0 1rem;
+    text-align: left; /* Alinhamento à esquerda */
+    margin-left: 0; /* Remove margem esquerda */
+}
+
+.partner-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1rem;
+    width: auto;
 }
 
 @media (max-width: 768px) {
@@ -837,21 +850,20 @@
     
     .partner-card {
         width: 100%;
-        max-width: 280px;
-        height: auto;
+        max-width: 250px;
     }
     
     .partner-text {
         width: 100%;
-        max-width: 100%;
         padding: 0;
+        text-align: center; /* Centraliza no mobile */
     }
     
-    .partner-text p {
-        text-align: center;
+    .partner-button {
+        width: 100%;
+        max-width: 280px;
     }
 }
-
 
 
 
@@ -1067,25 +1079,20 @@
             <div class="partner-icon">
                 <img src="crazy anime.jpg" alt="Crazy Animes">
             </div>
-            
             <h3>Crazy Animes</h3>
             <p class="partner-category">Entretenimento</p>
-            <p class="partner-description">
-                Conecte-se com o universo geek através de produtos exclusivos de animes, filmes e cultura pop.
-            </p>
+            <p>Conecte-se com o universo geek através de produtos exclusivos</p>
         </div>
 
-        <!-- Texto Explicativo -->
+        <!-- Texto e Botão -->
         <div class="partner-text">
             <p>Os parceiros do Matsuri Ceeptic são essenciais para enriquecer a experiência cultural autêntica do evento. Eles compartilham nossa visão de promover a cultura japonesa com excelência.</p>
             
             <p>O Matsuri Ceeptic tem como objetivo proporcionar uma experiência rica e genuína da cultura japonesa. O apoio dos nossos parceiros é fundamental para agregar valor e oferecer aos participantes uma vivência ainda mais completa.</p>
             
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="https://www.instagram.com/matsuriceeptic" class="partner-button">
-                    Quer ser nosso parceiro? Acesse nosso Instagram!
-                </a>
-            </div>
+            <a href="https://www.instagram.com/matsuriceeptic" class="partner-button">
+                Quer ser nosso parceiro? Acesse nosso Instagram!
+            </a>
         </div>
     </div>
 </section>
