@@ -34,8 +34,7 @@
     border-bottom: 3px solid var(--dourado-japones);
 }
 
-        /* HEADER MODERNO FIXO */
-        /* HEADER ALINHADO À ESQUERDA COM LOGO + TEXTO */
+        
 .header-fixed {
     position: fixed;
     top: 0;
@@ -43,19 +42,19 @@
     width: 100%;
     background: rgba(139, 0, 0, 0.95);
     z-index: 1000;
-    padding: 0 1rem; /* Espaço nas laterais */
+    padding: 0 1rem; 
 }
 
 .nav-container {
     display: flex;
-    justify-content: flex-start; /* Alinha tudo à esquerda */
+    justify-content: flex-start; 
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0.8rem 0;
 }
 
-/* LOGO COM ÍCONE + TEXTO */
+
 .logo-small {
     display: flex;
     align-items: center;
@@ -65,7 +64,7 @@
     font-weight: 700;
     font-size: 1.5rem;
     text-decoration: none;
-    margin-right: 2rem; /* Espaço entre logo e links */
+    margin-right: 2rem; 
 }
 
 .logo-small i {
@@ -73,13 +72,13 @@
     font-size: 1.8rem;
 }
 
-/* LINKS DE NAVEGAÇÃO */
+
 .nav-links {
-    display: none; /* Será mostrado em desktop */
+    display: none; 
     gap: 1.5rem;
 }
 
-/* Restante do seu CSS permanece igual */
+
         .nav-links a {
             color: white;
             text-decoration: none;
@@ -109,19 +108,19 @@
             width: 100%;
         }
 
-        /* BOTÕES ESTÁTICOS (SEM HOVER) */
+        
         .cta-button {
-    background: white; /* Fundo branco */
-    color: var(--vermelho-japones); /* Texto vermelho */
+    background: white; 
+    color: var(--vermelho-japones); 
     padding: 0.5rem 1.5rem;
     border-radius: 20px;
     font-weight: bold;
     text-decoration: none;
     font-size: 0.95rem;
-    border: 2px solid white; /* Borda branca */
+    border: 2px solid white; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: none; /* Remove efeitos de hover */
-    margin-left: auto; /* Mantém alinhado à direita */
+    transition: none; 
+    margin-left: auto; 
 }
 
 .button {
@@ -132,12 +131,12 @@
     font-weight: bold;
     font-size: 1.1rem;
     border: 2px solid var(--vermelho-japones);
-    /* Remove TODOS os efeitos dinâmicos */
+    
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-top: 1.5rem;
     cursor: pointer;
     width: 100%;
-    /* Garante que não terá hover */
+   
     transition: none !important;
 }
 
@@ -272,7 +271,7 @@
             font-style: italic;
         }
 
-        /* FEATURE CARDS */
+       
         .feature-cards {
             display: flex;
             flex-wrap: wrap;
@@ -318,7 +317,7 @@
             font-size: 0.95rem;
         }
 
-        /* SECTIONS */
+      
         .section-container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 12px;
@@ -428,7 +427,7 @@
             box-shadow: 0 5px 15px rgba(139,0,0,0.3);
         }
 
-        /* LOCATION SECTION */
+        
         .location-section {
             background: white;
             border-radius: 10px;
@@ -488,7 +487,7 @@
             border: none;
         }
 
-        /* FORM SECTION */
+       
         .form-container {
             width: 100%;
             max-width: 700px;
@@ -542,7 +541,7 @@
     border: 2px solid var(--vermelho-japones);
     cursor: pointer;
     width: 100%;
-    /* Tudo abaixo remove efeitos dinâmicos */
+    
     transition: none !important;
     transform: none !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
@@ -670,19 +669,19 @@
     gap: 20px;
 }
 
-/* Cards de regras - TAMANHO IGUAL */
+
 .rule-card {
     background: white;
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border-left: 4px solid #8a1c10;
-    min-height: 220px; /* Altura mínima fixa */
+    min-height: 220px; 
     display: flex;
     flex-direction: column;
 }
 
-/* Garante que o conteúdo ocupe todo o espaço */
+
 .rule-card h3 {
     margin: 0 0 1rem 0;
     font-size: 1.2rem;
@@ -695,10 +694,10 @@
 .rule-card ul {
     padding-left: 1.5rem;
     margin: 0;
-    flex: 1; /* Ocupa todo espaço disponível */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; /* Distribui espaço igualmente */
+    justify-content: space-evenly; 
 }
 
 .rule-card li {
@@ -707,7 +706,7 @@
     position: relative;
 }
 
-/* Card de aviso */
+
 .rule-card.warning {
     border-left-color: #ff5252;
     background-color: #fff5f5;
@@ -724,7 +723,7 @@
     }
     
     .rule-card {
-        min-height: auto; /* Remove altura fixa em mobile */
+        min-height: auto; 
     }
 }
 
@@ -916,7 +915,7 @@
 
 .partner-button {
      display: inline-block;
-    background-color: #8a1c10; /* Vermelho japonês */
+    background-color: #8a1c10; 
     color: white;
     padding: 12px 20px;
     text-align: center;
@@ -989,7 +988,7 @@
   
    <header class="header-fixed">
     <div class="nav-container">
-        <!-- Logo com ícone + texto -->
+       
         <a href="#" class="logo-small">
             <img src="logo.png" alt="Logo" style="height: 70px;">
             <span>Matsuri Ceeptic</span>
@@ -1004,17 +1003,17 @@
             <a href="#contato">Contato</a>
         </nav>
         
-        <!-- Botão de reserva -->
+      
         <a href="#reserva" class="cta-button">Reservar</a>
         
-        <!-- Menu mobile -->
+       
         <button class="mobile-menu-button">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 </header>
 
-    <!-- Mobile Menu -->
+  
     <div class="overlay" id="overlay"></div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
@@ -1035,15 +1034,15 @@
         </nav>
     </div>
 
-    <!-- Main Content -->
+   
     <div class="main-content">
-        <!-- Hero Section -->
+       
         <section class="hero-section" id="sobre">
             <h1 class="hero-title">Matsuri Ceeptic</h1>
             <p class="hero-subtitle">O primeiro evento de cultura oriental e geek do CEEPTIC Lauro de Freitas</p>
         </section>
 
-        <!-- Feature Cards -->
+       
         <div class="feature-cards">
             <div class="feature-card">
                 <div class="feature-icon">
@@ -1070,7 +1069,7 @@
             </div>
         </div>
 
-        <!-- About Section -->
+       
         <div class="section-container">
             <section class="section">
                 <div class="text">
@@ -1084,7 +1083,7 @@
                 </div>
             </section>
 
-            <!-- Activities Section -->
+           
             <section class="section" id="atividades">
                 <div class="image">
                     <img src="f2.jpg" alt="Atividades do Evento" loading="lazy">
@@ -1103,7 +1102,7 @@
                 </div>
             </section>
 
-            <!-- Rules Section -->
+           
             <section class="section">
                 <div class="text">
                     <h2>Regras e Informações</h2>
@@ -1123,7 +1122,7 @@
                 </div>
             </section>
 
-            <!-- Location Section -->
+           
             <section class="location-section" id="local">
                 <h2>Localização</h2>
                 <div class="location-info">
@@ -1143,7 +1142,7 @@
                 </div>
             </section>
 
-            <!-- Registration Section -->
+           
             <section class="section" id="reserva">
                 <div class="text">
                     <h2>Garanta Sua Participação</h2>
@@ -1236,7 +1235,7 @@
     <h2>Conheça nossos parceiros</h2>
     
     <div class="partners-container">
-        <!-- Card do Parceiro -->
+       
         <div class="partner-card">
             <div class="partner-icon">
                 <img src="crazy anime.jpg" alt="Crazy Animes">
@@ -1246,7 +1245,7 @@
             <p>Conecte-se com o universo geek através de produtos exclusivos</p>
         </div>
 
-        <!-- Texto e Botão -->
+        
         <div class="partner-text">
             <p>Os parceiros do Matsuri Ceeptic são essenciais para enriquecer a experiência cultural autêntica do evento. Eles compartilham nossa visão de promover a cultura oriental com excelência.</p>
             
@@ -1261,7 +1260,7 @@
 
 
 
-            <!-- Contact Section -->
+            
             <section class="section" id="contato">
                 <div class="text">
                     <h2>Contato e Redes Sociais</h2>
@@ -1286,7 +1285,7 @@
 
     
 
-    <!-- Footer -->
+
     <footer class="footer">
         <p>Matsuri Ceeptic © <span id="current-year"></span> - Todos os direitos reservados</p>
         <p>Centro Estadual de Educação Profissional em Tecnologia, Informação e Comunicação</p>
@@ -1298,7 +1297,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+   
     <script>
        
         if (typeof jQuery == 'undefined') {
@@ -1311,12 +1310,12 @@
         }
 
         function initApp() {
-            // Carregar Select2 após jQuery estar disponível
+            
             var select2Script = document.createElement('script');
             select2Script.src = 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js';
             select2Script.onload = function() {
                 $(document).ready(function() {
-                    // Menu Mobile
+                    
                     const mobileMenuButton = document.querySelector('.mobile-menu-button');
                     const mobileMenu = document.getElementById('mobileMenu');
                     const overlay = document.getElementById('overlay');
@@ -1377,7 +1376,7 @@
                         maximumSelectionLength: 3
                     });
 
-                    // Eventos do formulário
+                   
                     $(document)
                         .on('change', '#atividade', function() {
                             const atividades = $(this).val();
@@ -1449,7 +1448,7 @@ function mostrarConfirmacao() {
         </div>
     `);
     
-    // Rolagem suave para mostrar a mensagem
+   
     document.getElementById('confirmacao-estatica').scrollIntoView({
         behavior: 'smooth'
     });
