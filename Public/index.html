@@ -653,6 +653,90 @@
             transform: translateY(-3px);
         }
 
+
+
+
+
+        .rules-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 1.5rem;
+}
+
+.rules-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cards de regras - TAMANHO IGUAL */
+.rule-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid #8a1c10;
+    min-height: 220px; /* Altura mínima fixa */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Garante que o conteúdo ocupe todo o espaço */
+.rule-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rule-card ul {
+    padding-left: 1.5rem;
+    margin: 0;
+    flex: 1; /* Ocupa todo espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* Distribui espaço igualmente */
+}
+
+.rule-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    position: relative;
+}
+
+/* Card de aviso */
+.rule-card.warning {
+    border-left-color: #ff5252;
+    background-color: #fff5f5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .rules-grid {
+        flex-direction: column;
+    }
+    
+    .rules-column {
+        gap: 15px;
+    }
+    
+    .rule-card {
+        min-height: auto; /* Remove altura fixa em mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
         /* RESPONSIVENESS */
         @media (min-width: 768px) {
             .nav-links {
@@ -873,6 +957,21 @@
         position: relative;
         left: -5px;
     }
+
+
+    
+/* Responsividade */
+@media (max-width: 768px) {
+    .rules-grid {
+        flex-direction: column;
+    }
+    
+    .rules-column {
+        gap: 15px;
+    }
+}
+
+
 }
 
 
@@ -1078,6 +1177,60 @@
             </section>
 
 
+
+
+
+            <section id="cospobre" class="section-container">
+                <h2>🏆 Competição Cospobre</h2>
+                
+                <div class="rules-grid">
+                    <!-- Coluna Esquerda -->
+                    <div class="rules-column">
+                        <div class="rule-card">
+                            <h3><span class="rule-icon">👥</span> Participação</h3>
+                            <ul>
+                                <li>Aberto a qualquer pessoa com pelo menos  <strong>3 peças</strong> do personagem</li>
+                                <li>Baseado em personagens existentes (anime, mangá, games)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="rule-card">
+                            <h3><span class="rule-icon">🎭</span> Apresentação</h3>
+                            <ul>
+                                <li>Performance de no <strong>máximo 1 minuto</strong></li>
+                                <li>Pode incluir falas, dança ou encenação</li>
+                                <li>Mostrar <strong>foto do personagem</strong> durante a performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Coluna Direita -->
+                    <div class="rules-column">
+                        <div class="rule-card">
+                            <h3><span class="rule-icon">🏅</span> Avaliação</h3>
+                            <ul>
+                                <li><strong>Caracterização:</strong> Fidelidade visual ao personagem</li>
+                                <li><strong>Criatividade:</strong> Originalidade da apresentação e dos recursos usados</li>
+                                <li><strong>Desempenho Cênico:</strong> Expressividade, atuação e domínio do palco</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="rule-card warning">
+                            <h3><span class="rule-icon">🚫</span> Proibições</h3>
+                            <ul>
+                                <li>Conteúdo ofensivo/desrespeitoso</li>
+                                <li>Objetos perigosos (cortantes, inflamáveis)</li>
+                                <li>Fantasias sexualizadas</li>
+                                <li>Ultrapassar tempo limite</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            
 
 
             <section id="parceiros" class="section-container">
