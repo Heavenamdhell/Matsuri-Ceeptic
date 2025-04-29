@@ -1300,7 +1300,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Carregar jQuery apenas se não estiver disponível
+       
         if (typeof jQuery == 'undefined') {
             var script = document.createElement('script');
             script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
@@ -1336,12 +1336,12 @@
                         overlay.classList.remove('active');
                     });
                     
-                    // Suavizar rolagem para links âncora
+                  
                     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         anchor.addEventListener('click', function(e) {
                             e.preventDefault();
                             
-                            // Fechar menu mobile se aberto
+                            
                             mobileMenu.classList.remove('active');
                             overlay.classList.remove('active');
                             
@@ -1357,7 +1357,7 @@
                         });
                     });
                     
-                    // Adicionar classe ao scroll para header fixo
+                    
                     window.addEventListener('scroll', function() {
                         const header = document.querySelector('.header-fixed');
                         if (window.scrollY > 100) {
@@ -1369,7 +1369,7 @@
                         }
                     });
 
-                    // Inicializar Select2 com limite de 3 seleções
+                 
                     $('#atividade').select2({
                         placeholder: "Selecione até 3 opções",
                         allowClear: true,
@@ -1422,18 +1422,16 @@
                         }
 
                         
-                        // Aqui você pode adicionar o código para enviar o formulário realmente
-                        // this.submit();
+                        
                     });
                 });
             };
             document.body.appendChild(select2Script);
         }
 
-        // Funções auxiliares
-        // Função para mostrar confirmação FIXA
+        
 function mostrarConfirmacao() {
-    // Cria a mensagem (vamos adicionar no próprio formulário)
+   
     const form = document.getElementById('reservaForm');
     
     form.insertAdjacentHTML('afterend', `
@@ -1457,11 +1455,11 @@ function mostrarConfirmacao() {
     });
 }
 
-// No evento de submit
+
 document.getElementById('reservaForm').addEventListener('submit', function(e) {
     e.preventDefault();
     mostrarConfirmacao();
-    // this.submit(); // Descomente para enviar o form real
+    
 });
 
         function mostrarCampos() {
